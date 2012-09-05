@@ -96,6 +96,32 @@ class MyLogger
 
 end
 
+class Button
+
+  def initialize(label)
+    @label
+  end
+
+end
+
+songlist = SongList.new
+
+class JukeboxButton < Button
+
+  def initialize(label, &action)
+    super(label)
+    @action = action
+  end
+
+  def button_pressed
+    @action.call(self)
+  end
+
+end
+
+start_button = JukeboxButton.new("Start") { songlist.start }
+pause_button = JukeboxButton.new("Pause") { songlist.pause }
+
 
 require 'test/unit'
 class TestSongList < Test::Unit::TestCase
