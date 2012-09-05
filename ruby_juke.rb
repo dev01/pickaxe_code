@@ -6,6 +6,14 @@ class Song
 
   attr_writer :duration
 
+  def duration_in_minutes
+    @duration/60.0    # force floating point
+  end
+
+  def duration_in_minutes=(new_duration)
+    @duration = (new_duration*60).to_i
+  end
+
   def to_s
     "song: #@name--#@artist (#@duration)"
   end
