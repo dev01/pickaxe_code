@@ -4,6 +4,8 @@ class Song
 
   attr_reader :name, :artist, :duration
 
+  attr_writer :duration
+
   def to_s
     "song: #@name--#@artist (#@duration)"
   end
