@@ -2,6 +2,7 @@
 
 class Song
 
+  attr_reader :name, :artist, :duration, :plays
   attr_writer :duration
 
   @@plays = 0
@@ -52,11 +53,17 @@ class SongList
 
   def initialize
     @songs = Array.new
+    @index = WordIndex.new
   end
 
   def append(song)
     @songs.push(song)
+    @index.add_to_index(song, song.name, song.artist)
     self
+  end
+
+  def lookup(word)
+    @index.lookup(word)
   end
 
   def delete_first
@@ -121,7 +128,7 @@ end
 class Button
 
   def initialize(label)
-    @label
+    @label = label
   end
 
 end
