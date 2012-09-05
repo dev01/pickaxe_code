@@ -2,11 +2,7 @@
 
 class Song
 
-  def initialize(name, artist, duration)
-    @name     = name
-    @artist   = artist
-    @duration = duration
-  end
+  attr_reader :name, :artist, :duration
 
   def to_s
     "song: #@name--#@artist (#@duration)"
