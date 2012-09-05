@@ -2,9 +2,22 @@
 
 class Song
 
-  attr_reader :name, :artist, :duration
-
   attr_writer :duration
+
+  @@plays = 0
+
+  def initialize(name, artist, duration)
+    @name     = name
+    @artist   = artist
+    @duration = duration
+    @plays    = 0
+  end
+
+  def play
+    @plays  += 1   # same as @plays = @plays + 1
+    @@plays += 1
+    "this song: #@plays plays. total #@@plays plays."
+  end
 
   def duration_in_minutes
     @duration/60.0    # force floating point
