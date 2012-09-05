@@ -71,6 +71,10 @@ class SongList
     @songs[index]
   end
 
+  def with_title(title)
+    @songs.find {|song| title == song.name }
+  end
+
   MAX_TIME = 5*60        # 5 minutes
 
   def SongList.is_too_long(song)
