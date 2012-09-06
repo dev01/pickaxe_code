@@ -2,7 +2,7 @@
 
 class Song
 
-  attr_reader :name, :artist, :duration, :plays
+  attr_accessor :name, :artist, :duration, :plays
   attr_writer :duration
 
   @@plays = 0

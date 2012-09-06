@@ -11,9 +11,11 @@ File.open("songdata") do |song_file|
     songs.append(Song.new(title, name, mins.to_i*60+secs.to_i))
   end
 
-  puts songs.lookup("Fats")
-  puts songs.lookup("ain't")
-  puts songs.lookup("RED")
-  puts songs.lookup("WoRlD")
+  puts songs[1]
+
+#  puts songs.lookup("Fats")
+#  puts songs.lookup("ain't")
+#  puts songs.lookup("RED")
+#  puts songs.lookup("WoRlD")
 
 end
